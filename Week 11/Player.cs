@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         //Move the player
-        transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * Time.deltaTime * playerSpeed);
+        transform.Translate(new Vector3(horizontalInput, 0, 0) * Time.deltaTime * playerSpeed);
         //Player leaves the screen horizontally
         if(transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
         {
