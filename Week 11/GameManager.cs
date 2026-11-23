@@ -6,15 +6,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public GameObject enemyOnePrefab;
-    public GameObject enemyTwoPrefab;
-    public GameObject enemyThreePrefab;
-    // Start is called before the first frame update
-    void Start()
-    {
+       {
         InvokeRepeating("CreateEnemyOne", 1, 2);
         InvokeRepeating("CreateEnemyTwo", 1, 4);
         InvokeRepeating("CreateEnemyThree", 1, 6);
+        InvokeRepeating("CreateCoinPrefab", 2, 5);
+        InvokeRepeating("CreateHeartPrefab", 4, 8);
     }
 
     // Update is called once per frame
@@ -37,4 +34,14 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(enemyThreePrefab, new Vector3(Random.Range(-9f, 9f), 6.5f, 0), Quaternion.identity);
     }
+    void CreateCoinPrefab()
+    {
+        Instantiate(coinPrefab, new Vector3(Random.Range(-9f, 9f), 6.5f, 0), Quaternion.identity);
+    }
+    void CreateHeartPrefab()
+    {
+        Instantiate(heartPrefab, new Vector3(Random.Range(-9f, 9f), 6.5f, 0), Quaternion.identity);
+    }
+
+}
 }
